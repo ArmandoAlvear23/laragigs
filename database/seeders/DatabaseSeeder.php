@@ -34,5 +34,7 @@ class DatabaseSeeder extends Seeder
             'website' => 'https://www.rgvwebbuilders.com',
             'description' => 'We are looking for a motivated Full-Stack Engineer to help us build amazing websites for our awesome customers!'
         ]);
+
+        Listing::factory(6)->create();
     }
 }
