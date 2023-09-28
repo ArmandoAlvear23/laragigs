@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +13,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Listing::create([
+            'title' => 'Laravel Senior Developer',
+            'tags' => 'laravel, javascript',
+            'company' => 'RGV Web Builders',
+            'location' => 'Brownsville, TX',
+            'email' => 'careers@rgvwebbuilders.com',
+            'website' => 'https://www.rgvwebbuilders.com',
+            'description' => 'We are looking for a motivated laravel developer to help us build amazing websites for our awesome customers!'
+        ]);
+
+        Listing::create([
+            'title' => 'Full-Stack Engineer',
+            'tags' => 'laravel, backend, api',
+            'company' => 'RGV Web Builders',
+            'location' => 'Brownsville, TX',
+            'email' => 'careers@rgvwebbuilders.com',
+            'website' => 'https://www.rgvwebbuilders.com',
+            'description' => 'We are looking for a motivated Full-Stack Engineer to help us build amazing websites for our awesome customers!'
+        ]);
     }
 }
