@@ -1,5 +1,4 @@
-@extends('layout')
-@section('content')
+<x-layout>
 @include('partials._search')
 
 <a href="/" class="inline-block text-black ml-4 mb-4">
@@ -47,4 +46,4 @@
     </x-card>
 </div>
 
-@endsection
+</x-layout>
