@@ -34,6 +34,21 @@
             ><img class="w-24" src="{{asset('images/logo.png')}}" alt="laragigs logo" class="logo"
         /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
+            {{-- Show if user is logged in--}}
+            @auth
+            <li>
+                <span class="font-bold uppercase">
+                    Welcome {{auth()->user()->name}}
+                </span>
+            </li>
+            <li>
+                <a href="/listings/manage" class="hover:text-laravel"
+                    ><i class="fa-solid fa-gear"></i>
+                    Manage Listings</a
+                >
+            </li>
+            @else
+            {{-- Show if user is not logged in --}}
             <li>
                 <a href="/register" class="hover:text-laravel"
                     ><i class="fa-solid fa-user-plus"></i> Register</a
@@ -45,6 +60,7 @@
                     Login</a
                 >
             </li>
+            @endauth
         </ul>
     </nav>
     <main>
