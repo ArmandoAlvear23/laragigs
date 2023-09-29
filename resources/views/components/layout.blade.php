@@ -34,7 +34,7 @@
             ><img class="w-24" src="{{asset('images/logo.png')}}" alt="laragigs logo" class="logo"
         /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
-            {{-- Show if user is logged in--}}
+            {{-- Show if user is logged in --}}
             @auth
             <li>
                 <span class="font-bold uppercase">
@@ -46,6 +46,14 @@
                     ><i class="fa-solid fa-gear"></i>
                     Manage Listings</a
                 >
+            </li>
+            <li>
+                <form method="POST" action="/logout" class="inline">
+                    @csrf
+                    <button type="submit">
+                        <i class="fa-solid fa-door-closed"></i> Logout
+                    </button>
+                </form>
             </li>
             @else
             {{-- Show if user is not logged in --}}
