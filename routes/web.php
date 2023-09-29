@@ -52,7 +52,7 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Show Register/Create Form
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
@@ -61,7 +61,7 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Show Login Form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 // Login User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
